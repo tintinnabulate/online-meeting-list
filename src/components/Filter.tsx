@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react';
-import { Select, Stack, useColorModeValue } from '@chakra-ui/react';
+import { FormControl, Select, Stack, useColorModeValue } from '@chakra-ui/react';
 
 import { Button } from './Button';
 import { Checkboxes } from './Checkboxes';
