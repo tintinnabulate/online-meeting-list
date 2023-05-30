@@ -1,50 +1,41 @@
-import { useContext } from 'react';
 import { Alert, Box, Stack } from '@chakra-ui/react';
 
-import { ButtonPrimary } from './ButtonPrimary';
-import { i18n, State } from '../helpers';
+import { Button } from './Button';
+import { useI18n, useInput } from '../helpers';
 
-export type NoResultsProps = {
-  state: State;
-  toggleTag: (filter: string, value: string, checked: boolean) => void;
-  clearSearch: () => void;
-};
+export function NoResults() {
+  const { input, setInput } = useInput();
+  const { strings } = useI18n();
 
-export function NoResults({ state, toggleTag, clearSearch }: NoResultsProps) {
-  const { strings } = useContext(i18n);
-
-  //get currrently active filters
-  const filters = Object.keys(state.filters)
-    .map(filter =>
-      state.filters[filter]
-        .filter(({ checked }) => checked)
-        .map(tag => [filter, tag.tag])
-    )
-    .flat();
   return (
     <Alert flexDirection="column" py={60} rounded="md" w="full">
       <Stack spacing={5} align="center">
         <Box>{strings.no_results}</Box>
-        {state.search && (
-          <ButtonPrimary
+        {!!input.searchWords.length && (
+          <Button
             icon="small-close"
-            onClick={() => clearSearch()}
-            text={strings.clear_search}
+            onClick={() => setInput({ ...input, searchWords: [] })}
+            primary
             title={strings.clear_search}
-          />
+          >
+            {strings.clear_search}
+          </Button>
         )}
-        {filters.map(([filter, tag], index) => (
-          <Box key={index}>
-            <ButtonPrimary
-              key={index}
-              icon="small-close"
-              onClick={() => toggleTag(filter, tag, false)}
-              text={tag}
-              title={tag}
-            />
-          </Box>
+        {input.tags.map(value => (
+          <Button
+            key={value}
+            icon="small-close"
+            onClick={() =>
+              setInput({
+                ...input,
+                tags: input.tags.filter(tag => tag !== value)
+              })
+            }
+            primary
+          >
+            {value}
+          </Button>
         ))}
-        {}
       </Stack>
     </Alert>
   );
