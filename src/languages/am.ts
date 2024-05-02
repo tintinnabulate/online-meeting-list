@@ -7,6 +7,7 @@ export const am = {
     clear_search: 'ፍለጋን ያጽዱ',
     close: 'ገጠመ',
     days: ['እሁድ', 'ሰኞ', 'ማክሰኞ', 'እሮብ', 'ሐሙስ', 'አርብ', 'ቅዳሜ'],
+    edit: 'አርትዕ ጠይቅ',
     email: 'ኢሜል',
     email_use: 'ኢሜል {{value}}',
     filters: 'ማጣሪያዎች',
@@ -36,6 +37,7 @@ export const am = {
       S: 'ስፓንኛ', // ES
       SK: 'ስሎቫክ',
       SV: 'ስዊድንኛ',
+      TL: 'ታንጋሎግ',
       UK: 'ዩክሬንያን'
     },
     no_results: 'ከተመረጡት ማጣሪያዎች ጋር የሚዛመዱ ውጤቶች የሉም',
@@ -52,6 +54,12 @@ export const am = {
     search: 'ፈልግ',
     telephone: 'ስልክ',
     telephone_use: 'ወደ {{እሴት}} ይደውሉ',
+    times: {
+      morning: 'ጥዋት',
+      midday: 'ምሳሌ',
+      evening: 'ማታ',
+      night: 'ሌሊት'
+    },
     timezone: 'የጊዜ ክልል',
     types: {
       '11': '11 ኛ ደረጃ ማሰላሰል',

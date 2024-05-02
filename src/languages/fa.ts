@@ -16,6 +16,7 @@ export const fa = {
       'جمعه',
       'شنبه'
     ],
+    edit: 'درخواست ویرایش',
     email_use: 'ایمیل {{value}}',
     filters: 'فیلترها',
     forum: 'انجمن',
@@ -44,6 +45,7 @@ export const fa = {
       S: 'اسپانیایی', // ES
       SK: 'اسلواکی',
       SV: 'سوئدی',
+      TL: 'تاگالوگ',
       UK: 'اوکراینی'
     },
     no_results: 'هیچ نتیجه ای با فیلترهای انتخاب شده مطابقت ندارد:',
@@ -61,6 +63,12 @@ export const fa = {
     search: 'جستجو کردن',
     telephone: 'تلفن',
     telephone_use: 'تماس با {{value}}',
+    times: {
+      morning: 'صبح',
+      midday: 'ظهر',
+      evening: 'عصر',
+      night: 'شب'
+    },
     timezone: 'منطقه زمانی',
     types: {
       '11': 'مدیتیشن مرحله یازدهم',

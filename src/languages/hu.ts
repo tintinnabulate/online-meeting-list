@@ -15,6 +15,7 @@ export const hu = {
       'Péntek',
       'Szombat'
     ],
+    edit: 'Szerkesztési kérelem',
     email: 'Email',
     email_use: 'E-mail: {{value}}',
     filters: 'Szűrők',
@@ -44,6 +45,7 @@ export const hu = {
       S: 'Spanyol', // ES
       SK: 'Szlovák',
       SV: 'Svéd',
+      TL: 'Tagalog',
       UK: 'Ukrán'
     },
     no_results: 'Nincs találat a kiválasztott szűrőknek:',
@@ -61,6 +63,12 @@ export const hu = {
     search: 'Keresés',
     telephone: 'Telefon',
     telephone_use: 'Hívjon {{value}}',
+    times: {
+      morning: 'Reggel',
+      midday: 'Dél',
+      evening: 'Este',
+      night: 'Éjjel'
+    },
     timezone: 'Időzóna',
     types: {
       '11': '11. lépés meditáció',

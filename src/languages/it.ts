@@ -15,6 +15,7 @@ export const it = {
       'Venerdì',
       'Sabato'
     ],
+    edit: 'Richiedi modifica',
     email: 'E-mail',
     email_use: "Invia un'e-mail a {{value}}",
     filters: 'Filtri',
@@ -44,6 +45,7 @@ export const it = {
       S: 'Spagnolo', // ES
       SK: 'Slovacco',
       SV: 'Svedese',
+      TL: 'Tagalo',
       UK: 'Ucraino'
     },
     no_results: 'Nessun risultato corrisponde ai filtri selezionati:',
@@ -60,6 +62,12 @@ export const it = {
     search: 'Ricerca',
     telephone: 'Telefono',
     telephone_use: 'Chiama {{value}}',
+    times: {
+      morning: 'Mattina',
+      midday: 'Mezzogiorno',
+      evening: 'Sera',
+      night: 'Notte'
+    },
     timezone: 'Fuso orario',
     types: {
       '11': 'Meditazione dell’11° passo',

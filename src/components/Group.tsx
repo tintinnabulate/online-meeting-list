@@ -1,4 +1,4 @@
-import Linkify from 'react-linkify';
+import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Accordion,
@@ -9,6 +9,8 @@ import {
   Badge,
   Box,
   Button as ChakraButton,
+  Grid,
+  GridItem,
   Menu,
   MenuButton,
   MenuItem,
@@ -24,17 +26,22 @@ import {
   formatOutlook365,
   formatOutlookLive,
   formatTime,
-  type Meeting,
-  useData,
-  useI18n
+  type Meeting as MeetingType,
+  useI18n,
+  type Group as GroupType
 } from '../helpers';
 
 import { Button } from './Button';
 import { Icon } from './Icon';
 
-export function Group({ meeting }: { meeting: Meeting }) {
-  const { group_id } = meeting;
-  const { groups } = useData();
+export function Group({
+  group,
+  meeting
+}: {
+  group: GroupType;
+  meeting: MeetingType;
+}) {
+  const { start, end } = meeting;
   const { strings } = useI18n();
   const accordion = useColorModeValue(
     {
@@ -49,19 +56,9 @@ export function Group({ meeting }: { meeting: Meeting }) {
     }
   );
 
-  const group = groups[group_id as keyof typeof groups];
-  if (!group) return <div>nothing</div>;
-  const {
-    name,
-    notes,
-    email,
-    phone,
-    website,
-    venmo,
-    paypal,
-    square,
-    meetings
-  } = group;
+  const { name, email, phone, website, venmo, paypal, square, meetings } =
+    group;
+
   meetings.sort((a, b) => {
     if (a.start && b.start) {
       const weekdayA = a.start.weekday === 7 ? 0 : a.start.weekday;
@@ -80,20 +77,13 @@ export function Group({ meeting }: { meeting: Meeting }) {
   });
   return (
     <Stack gap={5}>
-      {!!notes?.length && (
-        <Stack spacing={2}>
-          {notes.map((paragraph: string, key: number) => (
-            <Text key={key} wordBreak="break-word">
-              <Linkify>{paragraph}</Linkify>
-            </Text>
-          ))}
-        </Stack>
-      )}
       <Box display="flex" gap={2} flexWrap="wrap">
         {!!email && (
           <Button
             icon="email"
-            onClick={() => (window.location.href = `mailto:${email}`)}
+            onClick={() => {
+              window.open(`mailto:${email}`);
+            }}
           >
             {strings.email}
           </Button>
@@ -101,22 +91,29 @@ export function Group({ meeting }: { meeting: Meeting }) {
         {!!phone && (
           <Button
             icon="phone"
-            onClick={() => (window.location.href = `tel:${phone}`)}
+            onClick={() => {
+              window.open(`tel:${phone}`);
+            }}
           >
             {strings.telephone}
           </Button>
         )}
         {!!website && (
-          <Button icon="link" onClick={() => (window.location.href = website)}>
+          <Button
+            icon="link"
+            onClick={() => {
+              window.open(website);
+            }}
+          >
             {strings.website}
           </Button>
         )}
         {!!venmo && (
           <Button
             icon="cash"
-            onClick={() =>
-              (window.location.href = `https://account.venmo.com/u/${venmo}`)
-            }
+            onClick={() => {
+              window.open(`https://account.venmo.com/u/${venmo}`);
+            }}
           >
             Venmo
           </Button>
@@ -124,9 +121,9 @@ export function Group({ meeting }: { meeting: Meeting }) {
         {!!paypal && (
           <Button
             icon="cash"
-            onClick={() =>
-              (window.location.href = `https://www.paypal.com/paypalme/${paypal}`)
-            }
+            onClick={() => {
+              window.open(`https://www.paypal.com/paypalme/${paypal}`);
+            }}
           >
             PayPal
           </Button>
@@ -134,14 +131,14 @@ export function Group({ meeting }: { meeting: Meeting }) {
         {!!square && (
           <Button
             icon="cash"
-            onClick={() =>
-              (window.location.href = `https://cash.app/${square}`)
-            }
+            onClick={() => {
+              window.open(`https://cash.app/${square}`);
+            }}
           >
             Cash App
           </Button>
         )}
-        {meeting.start && meeting.end && (
+        {start && end && (
           <Menu autoSelect={false}>
             {({ isOpen }) => (
               <>
@@ -185,6 +182,16 @@ export function Group({ meeting }: { meeting: Meeting }) {
             )}
           </Menu>
         )}
+        {meetings[0].edit_url && (
+          <Button
+            icon="pencil"
+            onClick={() => {
+              window.open(meetings[0].edit_url);
+            }}
+          >
+            {strings.edit}
+          </Button>
+        )}
       </Box>
       {meetings.length > 1 && (
         <Box style={{ marginLeft: '-1.25rem', marginRight: '-1.25rem' }}>
@@ -215,17 +222,25 @@ export function Group({ meeting }: { meeting: Meeting }) {
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
-                  <AccordionPanel pt={1} pb={4} px={5}>
-                    <Stack spacing={{ base: 4, lg: 1 }}>
+                  <AccordionPanel pt={1} pb={4}>
+                    <Grid templateColumns={{ md: 'repeat(3, 1fr)' }} pb={5}>
                       {meetings.map(({ start, slug, name }, index) => (
-                        <Box
-                          display="flex"
-                          flexDirection={{ base: 'column', lg: 'row' }}
-                          gap={{ base: 0, lg: 3 }}
-                          key={index}
-                        >
-                          <Box>{formatTime(strings, start)}</Box>
-                          <Box>
+                        <Fragment key={index}>
+                          <GridItem
+                            borderBottom="1px"
+                            borderColor="gray.700"
+                            px={3}
+                            py={2}
+                          >
+                            {formatTime(strings, start)}
+                          </GridItem>
+                          <GridItem
+                            borderBottom="1px"
+                            borderColor="gray.700"
+                            colSpan={2}
+                            px={3}
+                            py={2}
+                          >
                             <Link to={`/${slug}`}>
                               <Text
                                 _hover={{ color: 'blue.600' }}
@@ -237,10 +252,10 @@ export function Group({ meeting }: { meeting: Meeting }) {
                                 {name}
                               </Text>
                             </Link>
-                          </Box>
-                        </Box>
+                          </GridItem>
+                        </Fragment>
                       ))}
-                    </Stack>
+                    </Grid>
                   </AccordionPanel>
                 </Box>
               )}

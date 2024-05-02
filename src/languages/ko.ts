@@ -15,6 +15,7 @@ export const ko = {
       '금요일',
       '토요일'
     ],
+    edit: '편집 요청',
     email: '이메일',
     email_use: '이메일 {{value}}',
     filters: '필터',
@@ -44,6 +45,7 @@ export const ko = {
       S: '스페인어', // ES
       SK: '슬로바키아어',
       SV: '스웨덴어',
+      TL: '타갈로그어',
       UK: '우크라니아어'
     },
     no_results: '선택한 필터와 일치하는 결과가 없습니다.',
@@ -60,6 +62,12 @@ export const ko = {
     search: '검색',
     telephone: '전화',
     telephone_use: '{{value}} 호출',
+    times: {
+      morning: '아침',
+      midday: '정오',
+      evening: '저녁',
+      night: '밤'
+    },
     timezone: '시간대',
     types: {
       '11': '11단계 명상',

@@ -15,6 +15,7 @@ export const da = {
       'Fredag',
       'Lørdag'
     ],
+    edit: 'Anmod om redigering',
     email: 'E-mail',
     email_use: 'E-mail {{value}}',
     filters: 'Filtre',
@@ -44,6 +45,7 @@ export const da = {
       S: 'Spansk', // ES
       SK: 'Slovakisk',
       SV: 'Svensk',
+      TL: 'Tagalog',
       UK: 'Ukrainsk'
     },
     no_results: 'Ingen resultater matcher de valgte filtre:',
@@ -61,6 +63,12 @@ export const da = {
     telephone: 'Telefon',
     telephone_use: 'Ring til {{value}}',
     timezone: 'Tidszone',
+    times: {
+      morning: 'Morgen',
+      midday: 'Middag',
+      evening: 'Aften',
+      night: 'Nat'
+    },
     types: {
       '11': '11. Trin Meditation',
       '12x12': '12 trin & 12 traditioner',

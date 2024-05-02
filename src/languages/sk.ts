@@ -15,6 +15,7 @@ export const sk = {
       'Piatok',
       'Sobota'
     ],
+    edit: 'Požiadavka na úpravu',
     email: 'E-mail',
     email_use: 'E-mail {{value}}',
     filters: 'Filtre',
@@ -44,6 +45,7 @@ export const sk = {
       S: 'Španielčina', // ES
       SK: 'Slovenský',
       SV: 'Švédčina',
+      TL: 'Tagalog',
       UK: 'Ukrajinský'
     },
     no_results: 'Vybraným filtrom nezodpovedajú žiadne výsledky:',
@@ -61,6 +63,12 @@ export const sk = {
     search: 'Vyhľadávanie',
     telephone: 'Telefón',
     telephone_use: 'Volať {{value}}',
+    times: {
+      morning: 'Ráno',
+      midday: 'Poludnie',
+      evening: 'Večer',
+      night: 'Noc'
+    },
     timezone: 'Časové pásmo',
     types: {
       '11': 'Meditácia 11. kroku',

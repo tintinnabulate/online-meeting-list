@@ -15,6 +15,7 @@ export const hi = {
       'शुक्रवार',
       'शनिवार'
     ],
+    edit: 'संपादन का अनुरोध करें',
     email: 'ईमेल',
     email_use: 'ईमेल {{value}}',
     filters: 'फिल्टर',
@@ -44,6 +45,7 @@ export const hi = {
       S: 'स्पैनिश', // ES
       SK: 'स्लोवाक',
       SV: 'स्वीडिश',
+      TL: 'तागालोग',
       UK: 'यूक्रेनी'
     },
     no_results: 'कोई परिणाम चयनित फ़िल्टर से मेल नहीं खाता:',
@@ -61,6 +63,12 @@ export const hi = {
     search: 'खोज',
     telephone: 'फ़ोन',
     telephone_use: 'कॉल {{value}}',
+    times: {
+      morning: 'सुबह',
+      midday: 'दोपहर',
+      evening: 'शाम',
+      night: 'रात'
+    },
     timezone: 'समय क्षेत्र',
     types: {
       '11': 'ग्यारहवां चरण ध्यान',

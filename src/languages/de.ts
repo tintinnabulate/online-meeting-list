@@ -15,6 +15,7 @@ export const de = {
       'Freitag',
       'Samstag'
     ],
+    edit: 'Bearbeitung anfordern',
     email: 'E-Mail',
     email_use: 'E-Mail {{value}}',
     filters: 'Filter',
@@ -44,6 +45,7 @@ export const de = {
       S: 'Spanisch', // ES
       SK: 'Slowakisch',
       SV: 'Schwedisch',
+      TL: 'Tagalog',
       UK: 'Ukrainisch'
     },
     no_results:
@@ -62,6 +64,12 @@ export const de = {
     search: 'Suche',
     telephone: 'Telefon',
     telephone_use: 'Rufen Sie {{value}} auf',
+    times: {
+      morning: 'Morgen',
+      midday: 'Mittag',
+      evening: 'Abend',
+      night: 'Nacht'
+    },
     timezone: 'Zeitzone',
     types: {
       '11': '11. Schritt-Meditation',

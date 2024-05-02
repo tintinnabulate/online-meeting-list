@@ -15,6 +15,7 @@ export const sv = {
       'Fredag',
       'Lördag'
     ],
+    edit: 'Begäran om redigering',
     email: 'E-post',
     email_use: 'Skicka e-post till {{value}}',
     filters: 'Filter',
@@ -44,6 +45,7 @@ export const sv = {
       S: 'Spanska', // ES
       SK: 'Slovakiska',
       SV: 'Svenska',
+      TL: 'Tagalog',
       UK: 'Ukrainska'
     },
     no_results: 'Inga resultat matchar de valda filtren:',
@@ -60,6 +62,12 @@ export const sv = {
     search: 'Sök',
     telephone: 'Telefon',
     telephone_use: 'Ring {{value}}',
+    times: {
+      morning: 'Morgon',
+      midday: 'Middag',
+      evening: 'Kväll',
+      night: 'Natt'
+    },
     timezone: 'Tidszon',
     types: {
       '11': '11:e stegs meditation',

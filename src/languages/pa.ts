@@ -15,6 +15,7 @@ export const pa = {
       'ਸ਼ੁੱਕਰਵਾਰ',
       'ਸ਼ਨੀਵਾਰ'
     ],
+    edit: 'ਸੋਧ ਦੀ ਬੇਨਤੀ ਕਰੋ',
     email: 'ਈ - ਮੇਲ',
     email_use: 'ਈਮੇਲ {{value}}',
     filters: 'ਫਿਲਟਰ',
@@ -44,6 +45,7 @@ export const pa = {
       S: 'ਸਪੈਨਿਸ਼', // ES
       SK: 'ਸਲੋਵਾਕ',
       SV: 'ਸਵੀਡਿਸ਼',
+      TL: 'ਤਾਗਾਲੋਗ',
       UK: 'ਯੂਕਰੇਨੀਅਨ'
     },
     no_results: 'ਚੁਣੇ ਗਏ ਫਿਲਟਰਾਂ ਨਾਲ ਕੋਈ ਨਤੀਜਾ ਨਹੀਂ ਮਿਲਦਾ:',
@@ -60,6 +62,12 @@ export const pa = {
     search: 'ਖੋਜ',
     telephone: 'ਫੋਨ',
     telephone_use: 'ਕਾਲ ਕਰੋ {{value}}',
+    times: {
+      morning: 'ਸਵੇਰ',
+      midday: 'ਦੁਪਹਿਰ',
+      evening: 'ਸ਼ਾਮ',
+      night: 'ਰਾਤ'
+    },
     timezone: 'ਸਮਾਂ ਖੇਤਰ',
     types: {
       '11': '11ਵਾਂ ਸਟੈਪ ਮੈਡੀਟੇਸ਼ਨ',

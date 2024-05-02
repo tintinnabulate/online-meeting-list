@@ -34,7 +34,8 @@ export async function load(url: string, language: Language): Promise<DataType> {
       search: '',
       tags: [],
       group_id: row.group_id,
-      edit_url: row.edit_url
+      // edit_url: row.edit_url,
+      rand: process.env.REACT_APP_SORT_BY === 'random' ? Math.random() : 0
     };
 
     if (typeof row.day !== 'undefined' && row.time && row.timezone) {
@@ -205,6 +206,7 @@ export async function load(url: string, language: Language): Promise<DataType> {
   return {
     filters: {
       days: hasOngoing ? [...strings.days, strings.ongoing] : strings.days,
+      times: Object.values(strings.times),
       formats,
       types,
       languages

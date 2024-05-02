@@ -7,6 +7,7 @@ export const ja = {
     clear_search: '明確な検索',
     close: 'シャット',
     days: ['日曜日', '月曜', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
+    edit: '編集リクエスト',
     email: 'Eメール',
     email_use: 'メール{{value}}',
     filters: 'フィルタ',
@@ -36,6 +37,7 @@ export const ja = {
       S: 'スペイン語', // ES
       SK: 'スロバキア',
       SV: 'スウェーデン語',
+      TL: 'タガログ語',
       UK: 'ウクライナ語'
     },
     no_results: '選択したフィルターに一致する結果はありません。',
@@ -53,6 +55,12 @@ export const ja = {
     search: '探す',
     telephone: '電話',
     telephone_use: '{{value}}を呼び出す',
+    times: {
+      morning: '朝',
+      midday: '真昼',
+      evening: '夕方',
+      night: '夜'
+    },
     timezone: 'タイムゾーン',
     types: {
       '11': '第11ステップ瞑想',

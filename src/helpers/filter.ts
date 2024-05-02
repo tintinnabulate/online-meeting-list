@@ -30,13 +30,31 @@ export function filter(meetings: Meeting[], input: InputType) {
         meeting.end = meeting.end.plus({ week: 1 });
       }
 
-      //remove all days from meeting
-      meeting.tags = meeting.tags.filter(tag => !strings.days.includes(tag));
+      const times = Object.values(strings.times);
+
+      //remove all days & times from meeting
+      meeting.tags = meeting.tags.filter(
+        tag => !strings.days.includes(tag) && !times.includes(tag)
+      );
 
       //add meeting day to tags
       const meetingDay =
         strings.days[meeting.start.weekday === 7 ? 0 : meeting.start.weekday];
       meeting.tags.push(meetingDay);
+
+      //add meeting time to tags
+      if (meeting.start.hour >= 4 && meeting.start.hour <= 11) {
+        meeting.tags.push(strings.times.morning); // morning (4am–11:59pm)
+      }
+      if (meeting.start.hour >= 11 && meeting.start.hour <= 16) {
+        meeting.tags.push(strings.times.midday); // midday (11am–4:59pm)
+      }
+      if (meeting.start.hour >= 16 && meeting.start.hour <= 20) {
+        meeting.tags.push(strings.times.evening); // evening (4pm–8:59pm)
+      }
+      if (meeting.start.hour >= 20 || meeting.start.hour <= 4) {
+        meeting.tags.push(strings.times.night); // night (8pm–4:59am)
+      }
 
       //sort tags
       meeting.tags.sort();
@@ -66,14 +84,18 @@ export function filter(meetings: Meeting[], input: InputType) {
 
   //sort meetings (by time then name)
   meetings.sort((a: Meeting, b: Meeting) => {
-    if (a.start && b.start && a.start !== b.start) {
-      return a.start.toMillis() - b.start.toMillis();
+    const aStart = a.start?.toMillis();
+    const bStart = b.start?.toMillis();
+    if (aStart && bStart && aStart !== bStart) {
+      return aStart - bStart;
     } else if (a.start && !b.start) {
       return -1;
     } else if (b.start && !a.start) {
       return 1;
     }
-    return a.name.localeCompare(b.name);
+    return process.env.REACT_APP_SORT_BY === 'random'
+      ? a.rand - b.rand
+      : a.name.localeCompare(b.name);
   });
 
   //return

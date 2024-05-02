@@ -15,6 +15,7 @@ export const sw = {
       'Ijumaa',
       'Jumamosi'
     ],
+    edit: 'Ombi la kuhariri',
     email: 'Barua pepe',
     email_use: 'Barua pepe {{value}}',
     filters: 'Vichujio',
@@ -44,6 +45,7 @@ export const sw = {
       S: 'Kihispania', // ES
       SK: 'Kislovakia',
       SV: 'Kiswidi',
+      TL: 'Kitagalogi',
       UK: 'Kiukreni'
     },
     no_results: 'Hakuna matokeo yanayolingana na vichujio vilivyochaguliwa:',
@@ -61,6 +63,12 @@ export const sw = {
     search: 'Tafuta',
     telephone: 'Simu',
     telephone_use: 'Piga simu kwa {{value}}',
+    times: {
+      morning: 'Asubuhi',
+      midday: 'Mchana',
+      evening: 'Jioni',
+      night: 'Usiku'
+    },
     timezone: 'Saa za eneo',
     types: {
       '11': 'Tafakari ya Hatua ya 11',

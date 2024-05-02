@@ -15,6 +15,7 @@ export const pl = {
       'piątek',
       'sobota'
     ],
+    edit: 'Zażądaj edycji',
     email: 'E-mail',
     email_use: 'Email {{value}}',
     filters: 'Filtry',
@@ -44,6 +45,7 @@ export const pl = {
       S: 'Hiszpański', // ES
       SK: 'Słowacki',
       SV: 'Szwedzki',
+      TL: 'Tagalski',
       UK: 'Ukraiński'
     },
     no_results: 'Żadne wyniki nie pasują do wybranych filtrów:',
@@ -60,6 +62,12 @@ export const pl = {
     search: 'Szukaj',
     telephone: 'Telefon',
     telephone_use: 'Zadzwoń {{value}}',
+    times: {
+      morning: 'Poranek',
+      midday: 'Południe',
+      evening: 'Wieczór',
+      night: 'Noc'
+    },
     timezone: 'Strefa czasowa',
     types: {
       '11': 'Medytacja 11. kroku',
