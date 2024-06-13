@@ -1,13 +1,12 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { createBrowserRouter, defer, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ChakraProvider, ColorModeScript, Text, Stack } from '@chakra-ui/react';
-import { DateTime } from 'luxon';
 
 import { App } from './App';
 import './index.css';
-import { getLanguage, load, parseSearchWords, theme } from './helpers';
-import { Error as ErrorBoundary, Meetings, SingleMeeting } from './components';
+import { theme } from './helpers';
+import { Error as ErrorBoundary } from './components';
 
 const container = document.getElementById('root');
 if (!container) throw new Error('Failed to find the root element');
@@ -23,14 +22,7 @@ const router = createBrowserRouter(
         if (!process.env.REACT_APP_JSON_URL) {
           throw new Error('REACT_APP_JSON_URL not specified');
         }
-
-        const url = new URL(request.url);
-        const query = url.searchParams;
-        const searchWords = parseSearchWords(query.get('search')?.toString());
-        const language = getLanguage();
-
-        const tags = query.getAll('tags');
-
+        
         return (
           <Stack>
               <Text>This online meeting finder has beeen retired.</Text>
@@ -40,17 +32,7 @@ const router = createBrowserRouter(
           </Stack>
         );
       },
-      children: [
-        {
-          path: '/',
-          element: <Meetings />
-        },
-        {
-          path: '/:id',
-          element: <SingleMeeting />,
-          loader: ({ params }) => params.id
-        }
-      ]
+
     }
   ],
   { basename: process.env.REACT_APP_BASE_URL }
