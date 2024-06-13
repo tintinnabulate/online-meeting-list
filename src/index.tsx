@@ -19,9 +19,6 @@ const router = createBrowserRouter(
       element: <App />,
       errorElement: <ErrorBoundary />,
       loader: ({ request }) => {
-        if (!process.env.REACT_APP_JSON_URL) {
-          throw new Error('REACT_APP_JSON_URL not specified');
-        }
         
         return (
           <Stack>
